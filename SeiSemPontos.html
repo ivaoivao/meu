@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SEIsemPONTOS</title>
+  <body>
+    <script type="text/javascript">
+      var sei = prompt("Digite o número do SEI: ");
+      var sei = sei.replaceAll(".","").replace("/","").replace("-","");
+      var resultado = document.createElement('input');
+      resultado.type = 'text';
+      resultado.value = sei;
+      resultado.style = 'font-size: 24px';
+      document.body.appendChild(resultado);
+    </script>
+    <button style="margin:10px; font-size: 24px" onclick="copiarTexto()">Copiar</button>
+    <script type="text/javascript">
+        let copiarTexto = () => {
+            let copiaSei = document.createElement("input");
+            copiaSei.value = sei;
+            document.body.appendChild(copiaSei);
+            copiaSei.select();
+            document.execCommand('copy');
+            document.body.removeChild(copiaSei);
+        };
+    </script>
+    <button type="reset" style="font-size: 24px" onclick="document.location.reload()">Reiniciar</button>
+  </body>
+</html>
+<!--Developed by Ivo Nakamura-->
